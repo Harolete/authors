@@ -20,8 +20,6 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-
-
 ## Notas
 #####1) php artisan make:migration CreateAuthorsTable --create=authors
 Esto crea el archivo CreateAuthorsTable en database/migrations donde están las funciones up y down que crean y destruyen
