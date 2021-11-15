@@ -11,6 +11,12 @@
 |
 */
 
+/**
+ * Con ayuda de Faker/generator, genera datos random para llenarlos en el fillable de la clase Author.
+ * Este define se llama desde la class DatabaseSeeder
+ * @params class Faker\generator
+ * @return array
+ */
 $factory->define(App\Author::class, function (Faker\Generator $faker) {
     return [
         'gender'    => $gender = $faker->randomElement(['male', 'female']),

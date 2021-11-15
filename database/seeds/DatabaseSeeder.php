@@ -12,6 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        /*
+         * Crea 50 instancias de autor de forma aleatoria gracias al faker/generator del modelFactory
+         */
         factory(Author::class,50)->create();
     }
 }

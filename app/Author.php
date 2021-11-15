@@ -13,16 +13,19 @@ class Author extends Model //implements AuthenticatableContract, AuthorizableCon
     use Authenticatable, Authorizable;
 
     /**
-     * The attributes that are mass assignable.
+     * fillable indica cuales son los atributos del modelos que pueden ser asignado de manera masiva
+     * lo cuales se asignan todos a la vez llamando a un metodo llamando create
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'gender', 'country'
+        'name',
+        'gender',
+        'country'
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * hidden son los atributos que estan ocultos cuando se retorna la data en el servicio
      *
      * @var array
      */
