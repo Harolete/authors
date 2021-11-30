@@ -8,6 +8,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -83,13 +84,18 @@ class Handler extends ExceptionHandler
                 Response::HTTP_UNPROCESSABLE_ENTITY );
         }
 
+        if($exception instanceof ClientException)
+        {
+            $message = $exception -> getResponse()->getBody();
+            $code = $exception->getCode();
+            return $this->errorMessage($message,$code);
+        }
+
         if(env('APP_DEBUG', false)){
             return  parent::render($request, $exception);
         }
 
         return  $this->errorResponse('Unexpected error, try later',
             Response::HTTP_INTERNAL_SERVER_ERROR );
-
-        return parent::render($request, $exception);
     }
 }
