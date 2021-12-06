@@ -10,7 +10,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
 class Author extends Model //implements AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, Authorizable;
+//    use Authenticatable, Authorizable;
 
     /**
      * fillable indica cuales son los atributos del modelos que pueden ser asignado de manera masiva

@@ -5,17 +5,21 @@ use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
+    public function setUp(): void
+    {
+        parent::setUp();
+    }
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testExample()
-    {
-        $this->get('/');
+//    public function testExample()
+//    {
+//        $this->get('/');
 
-        $this->assertEquals(
-            $this->app->version(), $this->response->getContent()
-        );
-    }
+//        $this->assertTrue(
+//            true
+//        );
+//    }
 }
