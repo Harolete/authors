@@ -1,43 +1,37 @@
-# Lumen PHP Framework
+# Microservicio Authors
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+[![Build Status](https://app.travis-ci.com/Harolete/authors.svg?branch=master)]()
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+Este microservicio forma parte de la arquitectura de (https://github.com/Harolete/ApiGateway) siendo el apigateway punto de acceso
+principal.
 
-## Official Documentation
+## Configuración del proyecto
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+## Notas personales (Lumen)
+#### 1) Migraciones de la DB
 
-## Security Vulnerabilities
+    php artisan make:migration CreateAuthorsTable --create=authors
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Notas
-#####1) php artisan make:migration CreateAuthorsTable --create=authors
 Esto crea el archivo CreateAuthorsTable en database/migrations donde están las funciones up y down que crean y destruyen
 la tabla authors en la db.
 
-#####2) Se modifica el Schema::create dentro de "up" en función a las columnas que necesitemos en cada tabla.
+#### 2) Especificado de columnas de la tabla 
+Dentro de la clase creada con el comando anterior, se modifica el Schema::create dentro de "up" en función a las columnas que necesitemos en cada tabla.
 
-#####3) php artisan migrate 
+#### 3) Creación de las tablas
+    php artisan migrate 
 Modificará el archivo "database.sqlite" con los  datos binarios de cada tabla.
 
-#####4) Se crea el modelo
+#### 4) Creación del modelo
 Lumen trae un modelo base en app/User.php
-Se modifica esta clase segun lo que se necesite
 
-#####5) Crear el factory
+Se crea los modelos necesarios para el proyecto tomando User.php como ejemplo.
+
+#### 5) Creación del factory
 Lumen ya trae un ModelFactory en database/factories
 Se modifica la función define dependiendo de lo que se necesite crear
 
-#####6) php artisan db:seed
-Esto ejecuta DatabaseSeeder ubicado en databsae/seeds.
+#### 6) Creación de modelos al azar para llenar la DB
+    php artisan db:seed
+Esto ejecuta DatabaseSeeder ubicado en database/seeds.
 Esta clase llama al factory para que cree las instancias determinadas en la funcion run
