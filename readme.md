@@ -21,23 +21,23 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Notas
-#####1) php artisan make:migration CreateAuthorsTable --create=authors
+##### 1) php artisan make:migration CreateAuthorsTable --create=authors
 Esto crea el archivo CreateAuthorsTable en database/migrations donde están las funciones up y down que crean y destruyen
 la tabla authors en la db.
 
-#####2) Se modifica el Schema::create dentro de "up" en función a las columnas que necesitemos en cada tabla.
+##### 2) Se modifica el Schema::create dentro de "up" en función a las columnas que necesitemos en cada tabla.
 
-#####3) php artisan migrate 
+##### 3) php artisan migrate 
 Modificará el archivo "database.sqlite" con los  datos binarios de cada tabla.
 
-#####4) Se crea el modelo
+##### 4) Se crea el modelo
 Lumen trae un modelo base en app/User.php
 Se modifica esta clase segun lo que se necesite
 
-#####5) Crear el factory
+##### 5) Crear el factory
 Lumen ya trae un ModelFactory en database/factories
 Se modifica la función define dependiendo de lo que se necesite crear
 
-#####6) php artisan db:seed
+##### 6) php artisan db:seed
 Esto ejecuta DatabaseSeeder ubicado en databsae/seeds.
 Esta clase llama al factory para que cree las instancias determinadas en la funcion run
