@@ -1,12 +1,14 @@
 # Microservicio Authors
 
-[![Build Status](https://app.travis-ci.com/Harolete/authors.svg?branch=master)]()
+[![Build Status](https://app.travis-ci.com/Harolete/authors.svg?branch=master)](https://app.travis-ci.com/github/Harolete/authors)
 
 Este microservicio forma parte de la arquitectura de (https://github.com/Harolete/ApiGateway) siendo el apigateway punto de acceso
 principal.
 
 ## Configuración del proyecto
 
+## Pruebas en Postman
+Debido a la seguridad aplicada a los servicios, estos solo pueden ser accedidos por
 ## Notas personales (Lumen)
 #### 1) Migraciones de la DB
 
